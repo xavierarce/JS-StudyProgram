@@ -13,27 +13,53 @@
 //     console.log('This is in the catch '+message)
 // })
 
-const userLeft = false
+const userLeft = true
 const userWatchingLoL = false
 
-function  learnCallback(callback, errorCallback){
-    if(userLeft){
-        errorCallback({
-            name: 'User Left',
-            message: ':('
-        })
-    } else if(userWatchingLoL){
-        errorCallback({
-            name:'User Warching LoL',
-            message:'JS < LOL'
-        })
-    } else{
-        callback('Learn!')
-    }
+// function  learnCallback(callback, errorCallback){
+//     if(userLeft){
+//         errorCallback({
+//             name: 'User Left',
+//             message: ':('
+//         })
+//     } else if(userWatchingLoL){
+//         errorCallback({
+//             name:'User Warching LoL',
+//             message:'JS < LOL'
+//         })
+//     } else{
+//         callback('Learn!')
+//     }
+// };
+
+// learnCallback((message)=>{
+//     console.log('Success:'+ message)
+// }, (error)=>{
+//     console.log(error.name + ' ' + error.message)
+// })
+
+
+
+function  learnPromise(){
+    return new Promise ((resolve, reject)=>{
+        if(userLeft){
+            reject({
+                name: 'User Left',
+                message: ':('
+            })
+        } else if(userWatchingLoL){
+            reject({
+                name:'User Warching LoL',
+                message:'JS < LOL'
+            })
+        } else{
+            resolve('Learn!')
+        }
+    })
 };
 
-learnCallback((message)=>{
+learnPromise().then((message)=>{
     console.log('Success:'+ message)
-}, (error)=>{
+}).catch((error)=>{
     console.log(error.name + ' ' + error.message)
 })

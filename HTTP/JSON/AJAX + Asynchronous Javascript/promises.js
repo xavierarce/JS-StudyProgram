@@ -63,3 +63,33 @@ learnPromise().then((message)=>{
 }).catch((error)=>{
     console.log(error.name + ' ' + error.message)
 })
+
+
+
+const studyJS = new Promise((resolve,reject)=>{
+    resolve('Studied JS')
+})
+
+const studyPthn = new Promise((resolve,reject)=>{
+    resolve('Studied Pthn')
+})
+
+const studyAjax = new Promise((resolve,reject)=>{
+    resolve('Studied Ajax')
+});
+
+Promise.all([
+    studyJS,
+    studyPthn,
+    studyAjax
+]).then((messages)=>{
+    console.log(messages)
+})
+
+Promise.race([
+    studyJS,
+    studyPthn,
+    studyAjax
+]).then((message)=>{
+    console.log(message)
+})

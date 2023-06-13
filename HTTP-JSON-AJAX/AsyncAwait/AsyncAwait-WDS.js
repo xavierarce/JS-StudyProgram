@@ -30,10 +30,9 @@ async function doWork(){
         console.log('Responde Recieved')
         const processedResponse = await processRequest(response)
         console.log(processedResponse)    
-    } catch(eerr){
-    console.log(eerr)
+    } catch(err){
+    console.log(err)
     }
-    
 }
 
 doWork()

@@ -23,8 +23,8 @@ const shortPromise = Promise.resolve(
   }, 4000)
 );
 // #4) Catch this error and console log 'Ooops something went wrong'
-Promise.reject('failed')
-  .catch(console.log('Ooops something went wrong'))
+// Promise.reject('failed')
+//   .catch(console.log('Ooops something went wrong'))
 
 // #5) Use Promise.all to fetch all of these people from Star Wars (SWAPI) at the same time.
 // Console.log the output and make sure it has a catch block as well.
@@ -34,6 +34,17 @@ const urls = [
   'http://swapi.dev/api/people/3',
   'http://swapi.dev/api/people/4'
 ]
+
+Promise.all(urls.map(url=>
+  fetch(url).then(people=> people.json())
+))
+  .then(array=>{
+  console.log('1',array[0]),
+  console.log('2',array[1]),
+  console.log('3',array[2]),
+  console.log('4',array[3])
+  })
+  .catch(err => console.log('EROOR', err));
 
 // #6) Change one of your urls above to make it incorrect and fail the promise
 // does your catch block handle it?

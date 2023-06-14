@@ -34,7 +34,7 @@ const getData = async function(){
         console.log('posts',posts)
         console.log('albums',albums)    
     }catch(err){
-        console.log('oopaa',err)
+        console.log('Ooops',err)
     }
 }
 

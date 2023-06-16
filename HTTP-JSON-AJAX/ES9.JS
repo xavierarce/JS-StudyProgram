@@ -41,12 +41,12 @@ const getData = async function(){
     }
 }
 
-// const loopThroughUrl =  url=> {
-//     for(url of urls2){
-//         console.log(url)
-//     }
-// }
-// loopThroughUrl(urls2)
+const loopThroughUrl =  url=> {
+    for(url of urls2){
+        console.log(url)
+    }
+}
+loopThroughUrl(urls2)
 
 const getData2 = async function(){
     const arrayOfPromises = urls2.map(url=>fetch(url));

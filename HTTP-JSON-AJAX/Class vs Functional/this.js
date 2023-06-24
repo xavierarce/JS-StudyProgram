@@ -19,7 +19,7 @@ function App() {
     <div className="">
         <button onClick={decrementCount}>-</button>
         <span>{count}</span>
-        <button onClick={increEmentCount}>+</button>
+        <button onClick={incrementCount}>+</button>
     </div>
   );
 }

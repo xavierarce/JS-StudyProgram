@@ -9,3 +9,6 @@ Update packages through package.json
 
 
 //process is not defined - process word not supported on frontend (is on node)-> on index.html we add script declaring process= "test" (not recomended)
+
+Particles-bg
+react-parallax-tilt
